@@ -1,0 +1,19 @@
+/* This wrapper covers the entire CAPA block */
+.userhash-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.1;
+  z-index: 1000;
+}
+
+/* One watermark cell */
+.userhash-overlay span {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  transform: rotate(-45deg);
+}

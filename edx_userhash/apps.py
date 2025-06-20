@@ -15,5 +15,5 @@ class OpenedxUserhashConfig(AppConfig):
     verbose_name = "User Hash"
 
     def ready(self):
-        # Late import to avoid side-effects during migrations
         from . import signals  # noqa: F401
+        from . import admin # noqa: F401
