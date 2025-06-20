@@ -24,4 +24,4 @@ class OpenedxUserhashConfig(AppConfig):
         cp = "edx_userhash.context_processors.user_hash"
         opts = settings.TEMPLATES[0]["OPTIONS"]
         if cp not in opts["context_processors"]:
-            opts["context_processors"].append(cp)
+            opts["context_processors"] = opts["context_processors"] + (cp, )
