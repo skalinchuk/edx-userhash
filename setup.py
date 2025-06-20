@@ -143,7 +143,6 @@ setup(
 
     include_package_data=True,
     install_requires=load_requirements('requirements/base.in'),
-    python_requires=">=3.12",
     zip_safe=False,
     keywords='Python edx',
     classifiers=[
