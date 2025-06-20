@@ -9,6 +9,6 @@ class Command(BaseCommand):
     def handle(self, *args, **opts):
         User = get_user_model()
         missing = User.objects.filter(userhash__isnull=True)
-        for user in missing.iterator():
-            UserHash.objects.create(user=user, hash=generate_unique_hash(user.pk))
+        for user in missing.all():
+            UserHash.objects.create(user=user, hash=generate_unique_hash(user.pk, user.get_username()))
         self.stdout.write(self.style.SUCCESS(f"Back-filled {missing.count()} users"))

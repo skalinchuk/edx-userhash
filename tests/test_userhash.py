@@ -25,11 +25,11 @@ from edx_userhash.admin import UserHashAdmin
 @pytest.mark.django_db
 def test_generate_unique_hash_format_and_uniqueness():
     """Hash must be 64 hex chars and different on repeated calls."""
-    h1 = generate_unique_hash(42)
-    h2 = generate_unique_hash(42)
+    h1 = generate_unique_hash(42, 'johndoe')
+    h2 = generate_unique_hash(42, 'johndoe')
 
-    assert len(h1) == 64
-    assert re.fullmatch(r"[0-9a-f]{64}", h1)
+    assert len(h1) == 12
+    assert re.fullmatch(r"[0-9a-f]{12}", h1)
     assert h1 != h2
 
 
