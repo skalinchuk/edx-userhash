@@ -128,6 +128,8 @@ if sys.argv[-1] == 'tag':
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding="utf8").read()
 CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encoding="utf8").read()
 
+APP_NAME = "edx_userhash = edx_userhash.apps:EdxUserhashConfig"
+
 setup(
     name='edx-userhash',
     version=VERSION,
@@ -156,4 +158,5 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.12',
     ],
+    entry_points={"lms.djangoapp": [APP_NAME]},
 )
